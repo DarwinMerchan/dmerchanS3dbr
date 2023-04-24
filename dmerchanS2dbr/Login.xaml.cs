@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,26 @@ namespace dmerchanS2dbr
         private void btnRegistrar_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Registro());
+        }
+
+        private void txtdato_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                double numero = Convert.ToDouble(txtdato.Text);
+                if (numero < 1 && numero > 10)
+                {
+                    DisplayAlert("Mensaje", "El rango permitido es 1-10", "Cerrar");
+                    txtdato.Text = "";
+                }
+            } 
+            catch (Exception ex)
+            {
+
+                DisplayAlert("ERROR", ex.Message, "Cerrar");
+            }
+            
+            
         }
     }
 }
