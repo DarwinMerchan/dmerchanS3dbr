@@ -5,14 +5,14 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Sistema Calificaciones" TextColor="Black" FontSize="30" HorizontalTextAlignment="Center"/>
-            <Label Text="PARCIAL 1" TextColor="Red" FontSize="20"/> 
-            <Entry Placeholder="NOTASEG1" x:Name="NOTA1" Keyboard="Numeric"/>
-            <Entry Placeholder="NOTAEXAM1" x:Name="NOTA2" Keyboard="Numeric"/>
+            <Label Text="PARCIAL 1" TextColor="Red" FontSize="20"/>
+            <Entry Placeholder="NOTASEG1" x:Name="NOTA1" MaxLength="2" TextChanged="Notaseg1_TextChanged" Keyboard="Numeric"/>
+            <Entry Placeholder="NOTAEXAM1" x:Name="NOTA2" MaxLength="2" Keyboard="Numeric"/>
 
             <Label Text="PARCIAL 2" TextColor="Red" FontSize="20"/>
-            
-            <Entry Placeholder="NOTASEG2" x:Name="NOTA3" Keyboard="Numeric"/>
-            <Entry Placeholder="NOTAEXAM2" x:Name="NOTA4" Keyboard="Numeric"/>
+
+            <Entry Placeholder="NOTASEG2" x:Name="NOTA3" MaxLength="2" Keyboard="Numeric"/>
+            <Entry Placeholder="NOTAEXAM2" x:Name="NOTA4" MaxLength="2" Keyboard="Numeric"/>
             <Button Text="Resultado Final" Clicked="Button_Clicked" Background="orange" FontSize="20"/>
             <Entry Placeholder="Resultado" x:Name="Resultado"/>
         </StackLayout>                              

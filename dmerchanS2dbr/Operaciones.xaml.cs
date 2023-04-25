@@ -47,18 +47,32 @@ namespace dmerchanS2dbr
                 {
                     mensaje = "Reprobado";
                 }
-                    DisplayAlert("Resultado", mensaje, "ok");
-                }
+                DisplayAlert("Resultado", mensaje, "ok");
             }
         }
-    
+
+        private void Notaseg1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                var numero = double.Parse(NOTA1.Text);
+                if (numero < 1 || numero > 10)
+                {
+                    DisplayAlert("ERROR", "No esta en el rango permitido de ", "Cerrar");
+                    NOTA1.Text = "1";
+                }
+            }catch (Exception ex) {
+                DisplayAlert("ERROR", "Error: "+ ex.Message, "Cerrar");
+            }
+        }
     }
 
+}
 
 
 
-                 
-       
 
-       
-   
+
+
+
+
